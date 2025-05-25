@@ -1,4 +1,5 @@
 import { WalletConnect } from "@/components/wallet-connect";
+import Dashboard from "@/components/dashboard/dashboard";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -12,6 +13,7 @@ export default function Home() {
         <div className="flex justify-center">
           <WalletConnect />
         </div>
+        <Dashboard />
       </div>
     </main>
   );
