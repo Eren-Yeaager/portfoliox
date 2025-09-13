@@ -25,7 +25,6 @@ func ConnectDatabase() {
 	var db *gorm.DB
 	var err error
 
-	// Retry loop
 	for i := 0; i < 10; i++ {
 		db, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 		if err == nil {

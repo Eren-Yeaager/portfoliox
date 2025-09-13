@@ -1,8 +1,8 @@
 package models
 
 type Token struct {
-	ID     int     `json:"id"`
-	Name   string  `json:"name"`
-	Symbol string  `json:"symbol"`
-	Price  float64 `json:"price"`
+	ID     uint    `grom:"primaryKey" json:"id"`
+	Name   string  `json:"name" binding:"required"`
+	Symbol string  `json:"symbol" binding:"required"`
+	Price  float64 `json:"price" binding:"required,gt=0"`
 }

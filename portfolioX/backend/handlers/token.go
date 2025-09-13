@@ -65,6 +65,7 @@ func UpdateToken(c *gin.Context) {
 	var token models.Token
 	if err := DB.First(&token, id).Error; err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Token not found"})
+		return
 	}
 	var input models.Token
 	if err := c.ShouldBindJSON(&input); err != nil {
