@@ -11,4 +11,6 @@ func RegisterRoutes(r *gin.Engine) {
 	r.POST("/tokens", handlers.CreateToken)
 	r.PUT("/tokens/:id", handlers.UpdateToken)
 	r.DELETE("/tokens/:id", handlers.DeleteToken)
+	r.GET("/auth/nonce", handlers.GetNonce)
+	r.POST("/auth/verify", handlers.VerifySignature)
 }
