@@ -14,6 +14,7 @@ var DB *gorm.DB
 func Init(db *gorm.DB) {
 	DB = db
 }
+
 func GetTokens(c *gin.Context) {
 	var tokens []models.Token
 	if err := DB.Find(&tokens).Error; err != nil {
